@@ -1,6 +1,6 @@
 # MySQL Replication설정 방법에 대해서 작성하겠습니다.
 
-Replication 설정 전 확인
+## Replication 설정 전 확인
 - Master서버와 Slave서버의 server_id값은 모두 달라야 합니다. Replication설정전에 my.cnf에서 server_id값을 확인 및 수정합니다.
 - log_bin의 값을 확인합니다. binary_log 파일명을 입력합니다.
 - Replication전용 User를 작성합니다.
@@ -9,6 +9,7 @@ mysql> CREATE USER 'repl'@'%.example.com' IDENTIFIED BY 'password';
 mysql> GRANT REPLICATION SLAVE ON *.* TO 'repl'@'%.example.com';
 ```
   
+## Replication 설정
 Master 서버에서 실행
  - Replication설정에 필요한 정보를 확인합니다.
  - File값과 Position값을 확인합니다.
